@@ -180,3 +180,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"  # Bunu ekleyin
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+if os.path.isfile('env.py'):
+    import env
+
+# Stripe
+
+FREE_DELIVERY_TRESHOLD = 50
+STANDARD_DELIVERY_PERCENTAGE = 10
+STRIPE_CURRENCY = 'usd'
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+
